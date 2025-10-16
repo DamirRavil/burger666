@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Burger House</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #fffaf5;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: #ffcc00;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      animation: slideDown 1s ease;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-100%); }
+      to { transform: translateY(0); }
+    }
+
+    .logo {
+      font-size: 1.8em;
+      font-weight: bold;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: #ff0000;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1606755962773-0c3c79b36b9a?auto=format&fit=crop&w=1600&q=80') center/cover;
+      height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+    }
+
+    .hero-content {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 30px;
+      border-radius: 20px;
+      animation: fadeIn 2s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .btn {
+      display: inline-block;
+      background: #ff0000;
+      color: white;
+      padding: 12px 25px;
+      margin-top: 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #cc0000;
+      transform: scale(1.05);
+    }
+
+    .menu {
+      padding: 80px 60px;
+      text-align: center;
+      background: #fff;
+    }
+    .menu h2 {
+      margin-bottom: 40px;
+      font-size: 2em;
+    }
+    .menu-items {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: #fff8e7;
+      border-radius: 20px;
+      padding: 20px;
+      width: 280px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+      animation: popUp 1s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+    }
+    @keyframes popUp {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    .card img {
+      width: 100%;
+      border-radius: 15px;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .order {
+      background: #fff0da;
+      padding: 80px 60px;
+      text-align: center;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 400px;
+      margin: auto;
+    }
+    input, select, textarea {
+      padding: 10px;
+      border: 2px solid #ffcc00;
+      border-radius: 10px;
+    }
+    button {
+      background: #ff0000;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #cc0000;
+    }
+
+    .success {
+      color: green;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .contact {
+      background: #fff;
+      padding: 60px;
+      text-align: center;
+    }
+    .map-container {
+      margin-top: 20px;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="logo">🍔 Burger House</div>
+    <nav>
+      <a href="#menu">Меню</a>
+      <a href="#order">Заказ</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Лучшие бургеры в городе!</h1>
+      <p>Готовим с любовью ❤️ Адрес: Кошкарбаева 40</p>
+      <a href="#menu" class="btn">Сделать заказ</a>
+    </div>
+  </section>
+
+  <section id="menu" class="menu">
+    <h2>Наше меню</h2>
+    <div class="menu-items">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80" alt="Burger" />
+        <h3>Классический бургер</h3>
+        <p>Сочный говяжий бургер с сыром и соусом</p>
+        <span>2500 ₸</span>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1550317138-10000687a72b?auto=format&fit=crop&w=800&q=80" alt="Burger" />
+        <h3>Чизбургер</h3>
+        <p>Плавленый сыр, говядина, свежие овощи</p>
+        <span>2700 ₸</span>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1606756790123-8ec3d31c8d8f?auto=format&fit=crop&w=800&q=80" alt="Burger" />
+        <h3>Двойной бургер</h3>
+        <p>Две котлеты, двойной сыр и максимум вкуса</p>
+        <span>3200 ₸</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="order" class="order">
+    <h2>Оформить заказ</h2>
+    <form id="orderForm">
+      <input type="text" placeholder="Ваше имя" required />
+      <input type="tel" placeholder="Номер телефона" required />
+      <select required>
+        <option value="">Выберите бургер</option>
+        <option>Классический бургер - 2500 ₸</option>
+        <option>Чизбургер - 2700 ₸</option>
+        <option>Двойной бургер - 3200 ₸</option>
+      </select>
+      <textarea placeholder="Комментарий к заказу"></textarea>
+      <button type="submit">Отправить заказ</button>
+    </form>
+    <p id="success" class="success"></p>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Наши контакты</h2>
+    <p>📍 Адрес: Кошкарбаева 40</p>
+    <p>📞 Телефон: +7 777 777 77 77</p>
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps?q=Кошкарбаева+40,+Астана&output=embed"
+        width="100%" height="300" style="border:0;" allowfullscreen loading="lazy">
+      </iframe>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Burger House | Все права защищены</p>
+  </footer>
+
+  <script>
+    document.getElementById("orderForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const success = document.getElementById("success");
+      success.textContent = "✅ Спасибо за заказ! Мы свяжемся с вами в ближайшее время.";
+      this.reset();
+      setTimeout(() => success.textContent = "", 4000);
+    });
+  </script>
+
+</body>
+</html>
